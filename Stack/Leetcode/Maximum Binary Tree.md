@@ -76,6 +76,6 @@ class Solution:
 
 ```
 
-<img width="595" alt="스크린샷 2023-03-09 205802" src="https://user-images.githubusercontent.com/84978165/224016477-474f2df9-cb7f-478a-bce9-96ee1a964121.png">
+<img width="448" alt="image" src="https://user-images.githubusercontent.com/84978165/224589612-5241a58e-7aad-41e2-9efd-5866e253661d.png">
 
 
