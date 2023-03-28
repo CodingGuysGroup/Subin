@@ -54,6 +54,9 @@ C는 D(500)와 M(1000) 앞에 배치되어 400과 900을 만들 수 있습니다
 
 정수가 주어지면 로마 숫자로 변환하십시오.
 
+![image](https://user-images.githubusercontent.com/84978165/228226332-9fa99ffc-f834-4d29-b64e-267e7fda1696.png)
+
+
 ----
 
 ### `Constraints`
