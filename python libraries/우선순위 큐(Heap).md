@@ -82,7 +82,7 @@
 
 ### 우선순위 큐 구현
 
-0번째 인덱스부터 시작해도 상관은 없다.
+1번째 인덱스부터 시작한 이유는 x로 식을 세워 생각하기에 편하게 하기 위함(0으로 시작해도 상관은 없어보인다)
 
 <img width="504" alt="image" src="https://user-images.githubusercontent.com/84978165/229513515-3f2c04b8-ce27-4f98-94e7-30a55e2a2a43.png">
 
