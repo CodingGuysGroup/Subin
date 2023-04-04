@@ -137,7 +137,7 @@ def top():
 
 ### 우선순위 큐 라이브러리
 
-python  =>
+python 
 
 ```python
 from queue import PriorityQueue 
@@ -168,9 +168,26 @@ print(que.get()[1])  # 7
 print(que.get()[1])  # 4
 print(que.get()[1])  # 1
 
+
+import heapq
+
+hq = []
+
+heapq.heappush(hq, 4)
+heapq.heappush(hq, 1)
+heapq.heappush(hq, 3)
+heapq.heappush(hq, 7)
+
+heapq.heappop(hq) # 1
+
+x = [4, 3, 1, 2, 5, 6]
+print(x) # [4, 3, 1, 2, 5, 6]
+heapq.heapify(x)
+print(x) # [1, 2, 4, 3, 5, 6]
+
 ```
 
-c =>
+c
 
 ```c
 #include <iostream>
