@@ -152,18 +152,18 @@ que.put(7)
 
 #삭제
 print(que.get())  # 1
-print(que.get())  # 3
 print(que.get())  # 4
+print(que.get())  # 7
 
 #최소 힙이 아닌 최대 힙을 구현하고자 할 경우
 #(우선순위, 값)의 튜플의 형태로 데이터를 추가하고 제거
 
-que.put((3, 1))
-que.put((1, 3))
-que.put((2, 2))
+que.put((-4, 4))
+que.put((-1, 1))
+que.put((-7, 7))
 
-print(que.get()[1])  # 3
-print(que.get()[1])  # 2
+print(que.get()[1])  # 7
+print(que.get()[1])  # 4
 print(que.get()[1])  # 1
 
 ```
