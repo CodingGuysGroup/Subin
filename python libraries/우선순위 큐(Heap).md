@@ -87,6 +87,8 @@
 <img width="504" alt="image" src="https://user-images.githubusercontent.com/84978165/229513515-3f2c04b8-ce27-4f98-94e7-30a55e2a2a43.png">
 
 ```python
+
+# 아래의 코드는 최대 힙을 구현한 것이며 주석에서 언급한 부분의 코드를 바꾸면 최소 힙이 된다.
 heap = []
 sz = 0
 
@@ -98,7 +100,7 @@ def push(x):
     while (idx != 0):  # 최댓값의 idx가 0이되면 break
         # print(heap)
         par = int((idx - 1) / 2)
-        if heap[par] >= heap[idx]:  # 부모가 자식 노드들 보다 클 경우 이상없음(최대 힙)
+        if heap[par] >= heap[idx]:  # 부모가 자식 노드들 보다 클 경우 이상없음(최대 힙), 반대의 경우는 최소 힙
             break
         temp = heap[par]
         heap[par] = heap[idx]
@@ -119,7 +121,7 @@ def pop():
         if rc < sz:  # 오른쪽 노드가 존재한다면
             if heap[rc] > heap[lc]:
                 max_child = rc
-        if heap[idx] >= heap[max_child]:  # 부모가 자식 노드들 보다 클 경우 이상없음(최대 힙)
+        if heap[idx] >= heap[max_child]:  # 부모가 자식 노드들 보다 클 경우 이상없음(최대 힙), 반대의 경우는 최소 힙
             break
         temp = heap[max_child]
         heap[max_child] = heap[idx]
