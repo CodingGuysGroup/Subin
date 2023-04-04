@@ -80,10 +80,106 @@
 
 <br/>
 
-### 우선순위 큐 구현
+### 우선순위 큐 직접 구현
 
 1번째 인덱스부터 시작한 이유는 x로 식을 세워 생각하기에 편하게 하기 위함(0으로 시작해도 상관은 없어보인다)
 
 <img width="504" alt="image" src="https://user-images.githubusercontent.com/84978165/229513515-3f2c04b8-ce27-4f98-94e7-30a55e2a2a43.png">
 
+```python
+heap = []
+sz = 0
 
+def push(x):
+    global sz
+    heap.append(x)
+    sz += 1
+    idx = sz - 1
+    while (idx != 0):  # 최댓값의 idx가 0이되면 break
+        # print(heap)
+        par = int((idx - 1) / 2)
+        if heap[par] >= heap[idx]:  # 부모가 자식 노드들 보다 클 경우 이상없음(최대 힙)
+            break
+        temp = heap[par]
+        heap[par] = heap[idx]
+        heap[idx] = temp
+        idx = par  # 최댓값의 idx가 0으로 만들기 위함
+
+
+def pop():
+    global sz
+    sz -= 1
+    heap[0] = heap[sz]  # 삭제하려는 부분(루트)을 맨 마지막 노드와 바꿈
+    heap.pop()
+    idx = 0
+    while (2*idx + 1 < sz):
+        lc = 2*idx + 1
+        rc = 2*idx + 2
+        max_child = lc
+        if rc < sz:  # 오른쪽 노드가 존재한다면
+            if heap[rc] > heap[lc]:
+                max_child = rc
+        if heap[idx] >= heap[max_child]:  # 부모가 자식 노드들 보다 클 경우 이상없음(최대 힙)
+            break
+        temp = heap[max_child]
+        heap[max_child] = heap[idx]
+        heap[idx] = temp
+        idx = max_child
+
+
+def top():
+    return heap[0]
+```
+
+<br/>
+
+### 우선순위 큐 라이브러리
+
+python  =>
+
+```python
+from queue import PriorityQueue 
+
+#선언 (최소 힙이 기준)
+que = PriorityQueue()
+
+que = PriorityQueue(maxsize=8)
+
+#추가
+que.put(4)
+que.put(1)
+que.put(7)
+
+#삭제
+print(que.get())  # 1
+print(que.get())  # 3
+print(que.get())  # 4
+
+#최소 힙이 아닌 최대 힙을 구현하고자 할 경우
+#(우선순위, 값)의 튜플의 형태로 데이터를 추가하고 제거
+
+que.put((3, 1))
+que.put((1, 3))
+que.put((2, 2))
+
+print(que.get()[1])  # 3
+print(que.get()[1])  # 2
+print(que.get()[1])  # 1
+
+```
+
+c =>
+
+```c
+#include <iostream>
+#include <queue>
+
+using namespace std;
+int main() {
+    priority_queue<int> pq;
+    .
+    .
+    .
+    .
+    }
+```
