@@ -75,7 +75,7 @@ class Solution(object):
         return ans                     
 ```
 
-실패해서 구글링해서 찾아본 정답
+실패해서 구글링해서 찾아본 정답(투 포인터 사용)
 
 ```python
 class Solution(object):
